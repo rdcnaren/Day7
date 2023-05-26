@@ -1,9 +1,8 @@
 b) Get all the countries with a population of less than 2 lakhs using the Filter function.
-Ans:-https://jsfiddle.net/wgkt9bje/3/
-
+Ans:-FIDDLE LINK:-https://jsfiddle.net/wgkt9bje/3/
 
 c) Print the following details name, capital, flag using forEach function.
-Ans:-https://jsfiddle.net/krcztLdw/
+Ans:-FIDDLE LINK:-https://jsfiddle.net/krcztLdw/
 
 e) Print the country which uses US Dollars as currency.
-Ans:-https://jsfiddle.net/mz3ar0d5/
+Ans:-FIDDLE LINK:-https://jsfiddle.net/mz3ar0d5/
