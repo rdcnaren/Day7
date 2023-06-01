@@ -1,8 +1,46 @@
-b) Get all the countries with a population of less than 2 lakhs using the Filter function.
-Ans:-FIDDLE LINK:-https://jsfiddle.net/wgkt9bje/3/
+B) Get all the countries with a population of less than 2 lakhs using the Filter function.
+Ans:-fetch('https://restcountries.com/v3.1/all')
+  .then(response => response.json())
+  .then(data => {
+    // Filter countries with population less than 2 lakhs
+    const filteredCountries = data.filter(country => country.population < 200000);
 
-c) Print the following details name, capital, flag using forEach function.
-Ans:-FIDDLE LINK:-https://jsfiddle.net/krcztLdw/
+    // Print the filtered countries
+    filteredCountries.forEach(country => console.log(country.name.common));
+  })
+  .catch(error => console.log('Error:', error));
+  
+  
+C) Print the following details name, capital, flag using forEach function.
+Ans:-fetch('https://restcountries.com/v3.1/all')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(country => {
+      const { name, capital, flags } = country;
+      console.log('Name:', name.common);
+      console.log('Capital:', capital);
+      console.log('Flag:', flags.svg);  
+    });
+  })
+  .catch(error => console.log('Error:', error));
+  
+  
+  
 
-e) Print the country which uses US Dollars as currency.
-Ans:-FIDDLE LINK:-https://jsfiddle.net/mz3ar0d5/
+E) Print the country which uses US Dollars as currency.
+Ans:-      fetch("https://restcountries.com/v3.1/all")
+        .then((response) => response.json())
+        .then((data) => printData(filterData(data)))
+        .catch((error) => console.log(error));
+
+      function filterData(data) {
+        let filteredData = [];
+        if (data.length > 0) {
+          filteredData = data.filter((data) => data?.currencies?.USD);
+        }
+        return filteredData;
+      }
+
+      function printData(data) {
+        console.log(data.length);
+      }
